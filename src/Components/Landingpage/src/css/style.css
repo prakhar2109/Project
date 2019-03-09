@@ -1,0 +1,221 @@
+.container{
+  background-image: linear-gradient(to right bottom, #2C8EBF, #e9f5fb);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: fit-content;
+  padding: 4% 10%;
+
+}
+
+.container-body{
+  max-width: 120rem;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2rem 6rem 0.5rem rgba(101, 90, 86, 0.2);
+  height: fit-content;
+}
+
+.container-body-header{
+  background: #e6f2ff;
+  height: 5rem;
+  display: flex;
+  width: 100%;
+}
+.container-body-header-logo{
+ width: 20%;
+ display: flex;
+ 
+}
+.container-body-header-logo-image{
+  background-image:url('../img/mi.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 1rem;
+  height: 2rem;
+  align-self: center;
+  width: 30rem;
+  cursor: pointer;
+}
+.container-body-header-searchbar{
+  width: 60%;
+  /* align-items: center; */
+  align-self: center;
+}
+
+
+.btn {
+  padding-right: 1rem;
+  width: 42%;
+  font-size: 1rem;
+  background-image: linear-gradient(to right bottom, #2C8EBF, #e9f5fb);
+  border-radius: 10rem;
+  border: none;
+  text-transform: uppercase; 
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all .2s;
+  height:3rem;
+}
+
+.btn > *:first-child, .btn-small > *:first-child {
+  margin-right: .5rem;
+}
+.btn:hover, .btn-small:hover {
+  transform: scale(1.05); 
+}
+.btn:focus, .btn-small:focus {
+  outline: none; 
+}
+.btn svg {
+  height: 2.25rem;
+  width: 2.25rem;
+  fill: currentColor;
+}
+.search {
+  background-color: #fff;
+  border-radius: 10rem;
+  display: flex;
+  align-items: center;
+  padding-left: 3rem;
+  transition: all .3s; 
+  width: 70%;
+  height: 3rem;
+  margin: auto;
+ 
+}
+
+.search:focus-within {
+    transform: translateY(-2px);
+    box-shadow: 0 0.7rem 3rem rgba(101, 90, 86, 0.08); 
+}
+.search__field {
+    border: none;
+    background: none;
+    font-family: inherit;
+    color: inherit;
+    font-size: 1rem;
+    width: 70%; 
+}
+.search__field:focus {
+      outline: none; 
+}
+.searchicon{
+  background-image:url('../img/icon.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 1rem;
+  height: 20px;
+  width: 20px;
+}
+.search__field::placeholder {
+      color: #DAD0CC; 
+  }
+.contaier-body-element{
+
+  width:100%;
+  display: flex;
+  flex-direction: row;
+}
+.container-body-child1{
+width: 20%;
+height: auto;
+background-image: linear-gradient(to right bottom, #f6f6f6, #fff);
+}
+
+.container-body-child2{
+width: 60%;
+background: #e6f2ff;
+min-height: 100vh;
+height: fit-content;
+
+}
+.container-body-child3{
+  width: 20%;
+min-height: 100vh;
+height:auto;
+background-image: linear-gradient(to right bottom, #f6f6f6, #fff);
+}
+.container-body-card{
+  width: 90%;
+  border: 1px solid #fff;
+  box-shadow: 0 2px 3px #fff;
+  padding: 10px;
+  height: 30vh;
+  margin: 2rem auto;
+  background-image: linear-gradient(to right bottom, #f6f6f6, #fff);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+}
+
+.container-body-card-image{
+width: 30%;
+height: 100%;
+}
+
+.container-body-card-para{
+width: 70%;
+height: 100%;
+padding: 1rem;
+display: flex;
+flex-direction: column;
+}
+.container-body-card-para-child1{
+  height: 20%;
+  overflow: hidden;
+  word-break: break-all;
+  color: #53a89f;
+}
+.container-body-card-para-child2{
+  height: 50%;
+  color: black;
+}
+.container-body-card-para-child3{
+  height: 10%;
+  color: #818e94;
+}
+.container-body-card-para-child4{
+  height: 10%;
+  color: #818e94;
+}
+.container-body-child1-innerchild1{
+  
+  color: #4d4d4d;
+  padding: 2rem;
+  line-height: 2rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  display: block;
+}
+.container-body-child1-innerchild1 p{
+  margin:0;
+  cursor:pointer;
+  width: fit-content;
+
+}
+
+.container-body-child3-innerchild1{
+  
+  color: #4d4d4d;
+  padding: 2rem;
+  line-height: 2rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  display: block;
+}
+
+.container-body-child3-innerchild1 p{
+  margin:0;
+  cursor:pointer;
+  width: fit-content;
+}
+
+.setActive{
+  color:#2C8EBF;
+}
