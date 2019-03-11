@@ -3,6 +3,7 @@ import './src/css/filter.css';
 import './src/css/style.css';
 var slide1;
 var slide2;
+var slidecontain=[];
 export default class FilterBy extends Component {
     constructor(props) {
         super(props);
@@ -40,7 +41,8 @@ export default class FilterBy extends Component {
           
         // Neither slider will clip the other, so make sure we determine which is larger
         if( slide1 > slide2 ){ var tmp = slide2; slide2 = slide1; slide1 = tmp; }
-        
+        slidecontain[0]=slide1;
+        slidecontain[1]=slide2;
         var displayElement = parent.getElementsByClassName("rangeValues")[0];
             displayElement.innerHTML = '&#8377;' + slide1 + " - &#8377;" + slide2 + "k";
        
@@ -56,10 +58,10 @@ export default class FilterBy extends Component {
             date_type: e.target.value
         })
     }
-    hey(){
-        console.log(this.state.date_type)
-    }
-    render() {
+   
+    render() 
+    {
+       
         return (
 
 
@@ -68,16 +70,19 @@ export default class FilterBy extends Component {
                             <div className="container-body-child1-innerchild1">
                                 <p style={{ color: 'black', margin: "0" }}>FILTER BY </p>
                                 <p>Date</p>
-                                <input type="radio" name="date_type" value="Today" checked={this.state.date_type === "Today" ? true : false} onChange={this.onDateChange} />Today<br/>
-                                <input type="radio" name="date_type" value="oneweekago" checked={this.state.date_type === "oneweekago" ? true : false} onChange={this.onDateChange} />One Week Ago<br/>
-                                <input type="radio" name="date_type" value="onemonthago" checked={this.state.date_type === "onemonthago" ? true : false} onChange={this.onDateChange} /> One Month Ago<br/>
-                                {this.hey()}                         
+                                <input type="radio" name="date_type" value="Today" checked={this.state.date_type === "Today" ? true : false} onChange={(event)=>{this.onDateChange(event)
+                                this.props.datechoice(event.target.value)}} />Today<br/>
+                                <input type="radio" name="date_type" value="oneweekago" checked={this.state.date_type === "oneweekago" ? true : false}  onChange={(event)=>{this.onDateChange(event)
+                                this.props.datechoice(event.target.value)}} />One Week Ago<br/>
+                                <input type="radio" name="date_type" value="onemonthago" checked={this.state.date_type === "onemonthago" ? true : false} onChange={(event)=>{this.onDateChange(event)
+                                this.props.datechoice(event.target.value)}} /> One Month Ago<br/>
+                                {/* {this.hey()}                          */}
                                 <p >Cost</p>
                                 
                                 <section className="range-slider">
                                 <span className="rangeValues"></span>
-                                <input defaultValue="500" min="0" max="1000" step="10" type="range"/>
-                                <input defaultValue="50000" min="0" max="1000" step="10" type="range"/>
+                                <input defaultValue="0" min="0" max="1000" step="10" type="range" onChange={()=>this.props.filterbyCost(slidecontain)}/>
+                                <input defaultValue="1000" min="0" max="1000" step="10" type="range" onChange={()=>this.props.filterbyCost(slidecontain)}/>
                                 </section>
                             </div>
 
