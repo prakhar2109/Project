@@ -7,11 +7,9 @@ class Modal extends Component {
     super();
     this.state = {
         }
-    
+     
   }
-  componentDidMount(){
-      console.log(this.props.showModal)
-  }
+ 
   shouldComponentUpdate(nextProps,nextState){
       return nextProps.showModal!==this.props.showModal|| nextProps.children!==this.props.children;
   }
@@ -20,7 +18,7 @@ class Modal extends Component {
     return (
         <div>
                  <Backdrop show={this.props.showModal} clicked={this.props.modalClosed} />
-                <div className="Modal" style={{transform: this.props.showModal ? 'translateY(0)':'translateY(-100vh)'}}>
+                   <div className="Modal" style={{transform: this.props.showModal ? 'translateY(0)':'translateY(-100vh)'}}>
                     {this.props.children}
                     
                     

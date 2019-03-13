@@ -10,42 +10,46 @@ export default class Posts extends Component {
         }
     }
     componentDidMount(){
-        console.log(this.props,"posts props")
+        
+        this.setState({active:this.props.sortactive})
+ 
     }
+
+   
     setActive(value){
-        console.log("hello")
-        this.setState({active:value})
-        console.log(this.state.active)
+     
+        this.setState({active:value}) 
+      
     }
     render() {
         return (
 
 
             <>
-               <div className="container-body-child3">
+            
                             <div className="container-body-child3-innerchild1">
-                                <p style={{ color: 'black', margin: "0" }}>SORT BY </p>
-                                <p className={this.state.active==="plh"? "setActive":"setInactive"} onClick={event=>{
+                                <p style={{ color: 'black', margin: "0",fontFamily: "ProximaNova-Semibold"}}>SORT BY </p>
+                                <p className={this.props.sortactive===""?"setInactive":(this.state.active==="plh"? "setActive":"setInactive")} onClick={event=>{
                                     this.props.sortbyPriceLH()
                                     this.setActive("plh")
                                 }
                                 }
                                 >Price: Low-High</p>
-                                <p className={this.state.active==="phl"? "setActive":"setInactive"} onClick={event=>{
+                                <p className={this.props.sortactive===""?"setInactive":(this.state.active==="phl"? "setActive":"setInactive")} onClick={event=>{
                                     this.props.sortbyPriceHL()
                                     this.setActive("phl")
                                 }}>Price:High-Low</p>
-                                <p className={this.state.active==="dlh"? "setActive":"setInactive"} onClick={event=>{
+                                <p className={this.props.sortactive===""?"setInactive":(this.state.active==="dlh"? "setActive":"setInactive")} onClick={event=>{
                                     this.props.sortbyDatenew()
                                     this.setActive("dlh")
                                 }}>Newest First</p>
-                                <p className={this.state.active==="dhl"? "setActive":"setInactive"} onClick={event=>{
+                                <p className={this.props.sortactive===""?"setInactive":(this.state.active==="dhl"? "setActive":"setInactive")} onClick={event=>{
                                     this.props.sortbyDateold()
                                     this.setActive("dhl")
                                 }}>Oldest First</p>
                             </div>
 
-            </div>
+           
             </>
 
         )

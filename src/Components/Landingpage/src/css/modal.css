@@ -1,7 +1,6 @@
 .Modal {
     position: fixed;
     z-index: 500;
-    /* background-image: linear-gradient(to right bottom, #f6f6f6, #fff); */
     background-image: linear-gradient(to right bottom, #e6f2ff, #f6f6f6);
     width: 70%;
     border: 1px solid #ccc;
@@ -15,10 +14,41 @@
     transition: all 0.3s ease-out;
     
 }
-
+.Modal
+{
+    -webkit-box-shadow:0 1px 10px rgba(46, 162, 248,0.6), 0 0 20px rgba(46, 162, 248,0.8) inset;
+       -moz-box-shadow:0 1px 10px rgba(46, 162, 248,0.6), 0 0 20px rgba(46, 162, 248,0.8) inset;
+            box-shadow:0 1px 10px rgba(46, 162, 248,0.6), 0 0 20px rgba(46, 162, 248,0.8) inset;
+}
+.Modal:before, .Modal:after
+{
+	content:"";
+    position:absolute;
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(46, 162, 248,0.8);
+    -moz-box-shadow:0 0 20px rgba(46, 162, 248,0.8);
+    box-shadow:0 0 20px rgba(46, 162, 248,0.8);
+    top:10px;
+    bottom:10px;
+    left:0;
+    right:0;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+}
+.Modal:after
+{
+	right:10px;
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg);
+       -moz-transform:skew(8deg) rotate(3deg);
+        -ms-transform:skew(8deg) rotate(3deg);
+         -o-transform:skew(8deg) rotate(3deg);
+            transform:skew(8deg) rotate(3deg);
+}
 @media (min-width: 600px) {
     .Modal {
         width: 500px;
         left: calc(50% - 250px);
+        
     }
 }
